@@ -4,19 +4,19 @@ import { shallow, configure } from 'enzyme';
 
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import OptionsComponent from './options';
+import WordComponent from './word';
 
 const mockStore = configureMockStore();
 const store = mockStore({});
 configure({adapter: new Adapter()});
 
-describe("OptionsComponent Component", () => {
+describe("WordComponent Component", () => {
     it("should render without throwing an error", () => {
       const wrapper = shallow(
           <Provider store={store}>
-              <OptionsComponent />
+              <WordComponent />
           </Provider>
       );
-      expect(wrapper.exists()).toBe(true);
+        expect(wrapper.exists()).toBe(true);
     });
 });

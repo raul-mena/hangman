@@ -31,7 +31,7 @@ class KeywordComponent extends Component {
         foundLetter = true;
       }
     }
-
+    //if don't found some letter faild value is going to be update
     const payload = {
       letterFound,
       failed: failed + (foundLetter ? 0 : 1 )

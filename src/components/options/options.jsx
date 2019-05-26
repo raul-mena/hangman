@@ -55,7 +55,7 @@ class OptionsComponent extends Component {
                 Level:
               </div>
               <div className="col-md-8">
-                <select className="form-control" value={this.state.level} onChange={this.handleChangeLevel}>
+                <select id="mySelectLevel" className="form-control" value={this.state.level} onChange={this.handleChangeLevel}>
                     <option value="1">Easy</option>
                     <option value="2">Medium</option>
                     <option value="3">Hard</option>

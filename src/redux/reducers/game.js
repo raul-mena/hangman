@@ -23,6 +23,7 @@ export default (state = initialState, action) => {
         ...state
       }
     case NEW_GAME:
+    //set store params to start the game
         return {
           ...state,
           word: action.payload.word,
@@ -30,12 +31,14 @@ export default (state = initialState, action) => {
           level: action.payload.level
         }
     case PUSH_LETTER_TO_FIND:
+    //i some letter is found, it will be displayed
         return {
           ...state,
           letterFound: action.payload.letterFound,
           failed: action.payload.failed
         }
     case WIN_GAME:
+        //if win the game, wins state is updated
         return {
           ...state,
           wins: action.payload.wins,
@@ -44,6 +47,7 @@ export default (state = initialState, action) => {
           letterFound: [],
         }
     case LOSE_GAME:
+    //if lose the game, losers state is updated
         return {
           ...state,
           losers: action.payload.losers,
@@ -52,8 +56,14 @@ export default (state = initialState, action) => {
           letterFound: [],
         }
     default:
+    //default reset the game
       return {
-        ...initialState
+        ...state,
+        word: [],
+        letterFound: [],
+        failed: 0,
+        losers: 0,
+        wins: 0,
       }
   }
 }

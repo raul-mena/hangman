@@ -4,19 +4,19 @@ import { shallow, configure } from 'enzyme';
 
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import OptionsComponent from './options';
+import HeaderComponent from './header';
 
 const mockStore = configureMockStore();
 const store = mockStore({});
 configure({adapter: new Adapter()});
 
-describe("OptionsComponent Component", () => {
+describe("HeaderComponent Component", () => {
     it("should render without throwing an error", () => {
       const wrapper = shallow(
           <Provider store={store}>
-              <OptionsComponent />
+              <HeaderComponent />
           </Provider>
       );
-      expect(wrapper.exists()).toBe(true);
+        expect(wrapper.exists()).toBe(true);
     });
 });
